@@ -27,6 +27,8 @@ def speak(text, rate=125, volm=1):
 '''
 
 def speak(text, rate=125, volm=1):
+    text = text.replace("'", "\\'")
+    text = text.replace('"', '\\"')
     command = "say -r " + str(rate) + " [[volm " + str(volm) + "]] " + text
     os.system(command)
 
